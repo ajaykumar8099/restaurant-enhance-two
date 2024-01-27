@@ -42,6 +42,9 @@ class DishCard extends Component {
           const onClickAddToCart = () => {
             addCartItem({...dishDetails, quantity})
           }
+
+         const showButton = dishAvailability && quantity > 0
+
           return (
             <li className="card-item">
               <div>
@@ -73,7 +76,7 @@ class DishCard extends Component {
                 )}
 
                 {len >= 1 && <p className="custom">Customizations available</p>}
-                {dishAvailability && (
+                {showButton && (
                   <button
                     className="add-btn"
                     type="button"
